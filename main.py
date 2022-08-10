@@ -1,7 +1,5 @@
-from PyQt5.uic import loadUiType
-from PyQt5.QtWidgets import QMainWindow,QApplication
-# from PyQt5.QtCore import *
-# from PyQt5.QtGui import *
+from PySide2.QtUiTools import loadUiType
+from PySide2.QtWidgets import QMainWindow,QApplication
 from os import path
 from sys import argv
 from datamanager import database
@@ -11,7 +9,6 @@ FORM_CLASS,_=loadUiType(path.join(path.dirname(__file__),"GUI/login.ui"))
 class mainapp(QMainWindow,FORM_CLASS):
 	def __init__(self, parent=None):
 		super(mainapp,self).__init__(parent)
-		QMainWindow.__init__(self)
 		self.setupUi(self)
 		self.cr = database.databaseconnect(self,"DB/database.db")
 
@@ -30,10 +27,9 @@ class mainapp(QMainWindow,FORM_CLASS):
 			print("nope thats not you")
 
 
-
 if __name__ == "__main__":
-  app = QApplication(argv)
-  MainWindow = QMainWindow()
-  window = mainapp()
-  window.show()
-  exit(app.exec_())
+	app = QApplication(argv)
+	MainWindow = QMainWindow()
+	window = mainapp()
+	window.show()
+	exit(app.exec_())
