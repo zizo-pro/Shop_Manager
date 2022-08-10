@@ -1,11 +1,10 @@
-from ast import main
 from PyQt5.uic import loadUiType
 from PyQt5.QtWidgets import QMainWindow,QApplication
 # from PyQt5.QtCore import *
 # from PyQt5.QtGui import *
 from os import path
 from sys import argv
-from sqlite3 import connect
+from datamanager import database
 
 FORM_CLASS,_=loadUiType(path.join(path.dirname(__file__),"GUI/login.ui"))
 
@@ -14,14 +13,10 @@ class mainapp(QMainWindow,FORM_CLASS):
 		super(mainapp,self).__init__(parent)
 		QMainWindow.__init__(self)
 		self.setupUi(self)
-		self.databaseMan()
+		self.cr = database.databaseconnect(self,"DB/database.db")
 
 		self.login_bt.clicked.connect(self.login)
-	
-	def databaseMan(self):
-		self.db = connect("DB/database.db")
-		self.cr = self.db.cursor()
-	
+
 	def login(self):
 		username = self.username_input.text()
 		password = self.password_input.text()
