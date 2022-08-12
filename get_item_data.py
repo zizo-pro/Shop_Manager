@@ -14,7 +14,7 @@ class getitemdata(QMainWindow, FORM_CLASS):
 		self.cr = database.databaseconnect(self,"DB/database.db")
 
 	def getitem(self,barcode):
-		self.cr = database.databaseconnect(self,"DB/database.db")
+		# self.cr = database.databaseconnect(self,"DB/database.db")
 		self.cr.execute(f"SELECT * FROM goods WHERE barcode = '{barcode}'")
 		dataitem = self.cr.fetchone()
 		return dataitem

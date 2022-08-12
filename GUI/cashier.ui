@@ -47,9 +47,9 @@
    <widget class="QLabel" name="cashier_total_lb">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>625</x>
       <y>510</y>
-      <width>165</width>
+      <width>81</width>
       <height>40</height>
      </rect>
     </property>
@@ -78,17 +78,51 @@
      <string>Add</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="check_bt">
     <property name="geometry">
      <rect>
-      <x>387</x>
-      <y>530</y>
+      <x>470</x>
+      <y>500</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
      <string>Check</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="totalprice_lb">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>510</y>
+      <width>81</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>19</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 200, 0);</string>
+    </property>
+    <property name="text">
+     <string>0$</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="barcode_input">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>530</y>
+      <width>181</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Barcode</string>
     </property>
    </widget>
   </widget>
