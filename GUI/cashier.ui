@@ -20,7 +20,7 @@
       <x>388</x>
       <y>1</y>
       <width>411</width>
-      <height>500</height>
+      <height>581</height>
      </rect>
     </property>
     <column>
@@ -47,8 +47,8 @@
    <widget class="QLabel" name="cashier_total_lb">
     <property name="geometry">
      <rect>
-      <x>625</x>
-      <y>510</y>
+      <x>225</x>
+      <y>530</y>
       <width>81</width>
       <height>40</height>
      </rect>
@@ -68,10 +68,10 @@
    <widget class="QPushButton" name="add_bt">
     <property name="geometry">
      <rect>
-      <x>387</x>
-      <y>500</y>
-      <width>75</width>
-      <height>23</height>
+      <x>110</x>
+      <y>10</y>
+      <width>80</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="text">
@@ -81,10 +81,10 @@
    <widget class="QPushButton" name="check_bt">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>500</y>
-      <width>75</width>
-      <height>23</height>
+      <x>200</x>
+      <y>10</y>
+      <width>80</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="text">
@@ -94,8 +94,8 @@
    <widget class="QLabel" name="totalprice_lb">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>510</y>
+      <x>310</x>
+      <y>530</y>
       <width>81</width>
       <height>40</height>
      </rect>
@@ -115,14 +115,32 @@
    <widget class="QLineEdit" name="barcode_input">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>530</y>
-      <width>181</width>
-      <height>20</height>
+      <x>200</x>
+      <y>60</y>
+      <width>170</width>
+      <height>24</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
     </property>
     <property name="placeholderText">
      <string>Barcode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="confirm_bt">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>490</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Confirm</string>
     </property>
    </widget>
   </widget>

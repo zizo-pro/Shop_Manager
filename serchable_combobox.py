@@ -8,8 +8,7 @@ class ExtendedComboBox(QComboBox,QWidget):
 
 		self.setFocusPolicy(Qt.StrongFocus)
 		self.setEditable(True)
-		# self.resize(300, 40)
-		# self.setGeometry(30,250,90,20)
+		self.setInsertPolicy(ExtendedComboBox.NoInsert)
 
 		# add a filter model to filter matching items
 		self.pFilterModel = QSortFilterProxyModel(self)

@@ -4,7 +4,7 @@ class database():
 		super(database,self).__init__(parent)
 		self.databaseconnect("DB/database.db")
 	def databaseconnect(self,dbpath):
-		global cr
+		global cr,db
 		db = connect(dbpath)
 		cr = db.cursor()
 		return cr
@@ -12,7 +12,22 @@ class database():
 		cr.execute(f"SELECT * FROM goods WHERE barcode = '{barcode}'")
 		dataitem = cr.fetchone()
 		return dataitem
-	def execut(self,sql):
+	def executeall(self,sql):
 		cr.execute(sql)
 		dataitem = cr.fetchall()
+		return dataitem
+	def executeone(self,sql):
+		cr.execute(sql)
+		dataitem = cr.fetchone()
+		return dataitem
+	def execut(self,sql):
+		cr.execute(sql)
+		db.commit()
+	def getallitemsname(self):
+		cr.execute("SELECT item FROM goods")
+		items = cr.fetchall()
+		return items
+	def itemdatawithname(self,name):
+		cr.execute(f"SELECT * FROM goods WHERE item = '{name}'")
+		dataitem = cr.fetchone()
 		return dataitem
