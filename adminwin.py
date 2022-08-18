@@ -4,6 +4,7 @@ from os import path
 from sys import argv
 from cashier import cashierapp
 from checkitem import checkitem
+from storage import storagewin
 
 FORM_CLASS,_=loadUiType(path.join(path.dirname(__file__),"GUI/admin.ui"))
 
@@ -13,12 +14,17 @@ class adminwin(QMainWindow,FORM_CLASS):
 		self.setupUi(self)
 		self.cashier = cashierapp()
 		self.checkitem = checkitem()
+		self.storage = storagewin()
+		self.storage_bt.clicked.connect(self.storagewin)
 		self.cashier_bt.clicked.connect(self.cashierwin)
 		self.check_bt.clicked.connect(self.checkwin)
+
 	def cashierwin(self):
 		self.cashier.show()
 	def checkwin(self):
 		self.checkitem.show()
+	def storagewin(self):
+		self.storage.show()
 if __name__ == "__main__":
 	app = QApplication(argv)
 	MainWindow = QMainWindow()

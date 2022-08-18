@@ -14,12 +14,18 @@ class storagewin(QMainWindow, FORM_CLASS):
 		super(storagewin, self).__init__(parent)
 		self.setupUi(self)
 		self.cr = database()
+		self.buttonman()
 		self.filltable()
 		self.addwin = additem()
+		self.editeditems = []
+
+	def buttonman(self):
+		self.storage_table.itemChanged.connect(self.updatedb)
 		self.search_bt.clicked.connect(self.search)
 		self.reset_table_bt.clicked.connect(self.filltable)
-		self.save_bt.clicked.connect(self.cr.commit)
+		self.save_bt.clicked.connect(self.save)
 		self.additem_bt.clicked.connect(self.addwind)
+
 	def filltable(self):
 		self.storage_table.setRowCount(0)
 		items = self.cr.executeall("SELECT * FROM goods")
@@ -40,6 +46,29 @@ class storagewin(QMainWindow, FORM_CLASS):
 		self.storage_table.setItem(0, 3, QTableWidgetItem(str(itemdata[3])))
 	def addwind(self):
 		self.addwin.show()
+
+	def updatedb(self,item):
+		try:
+			itembarcode = self.storage_table.item(int(item.row()),3)
+			if item.column() == 0:
+				self.editeditems.append(f"UPDATE goods SET item = '{item.text()}' WHERE barcode = '{str(itembarcode.text())}'")
+			
+			elif item.column() == 1:
+				self.editeditems.append(f"UPDATE goods SET price = '{item.text()}' WHERE barcode = '{str(itembarcode.text())}'")
+			
+			elif item.column() == 2:
+				self.editeditems.append(f"UPDATE goods SET amount = '{item.text()}' WHERE barcode = '{str(itembarcode.text())}'")
+			
+			elif item.column() == 3:
+				itembarcode = self.storage_table.item(int(item.row()),0)
+				self.editeditems.append(f"UPDATE goods SET barcode = '{item.text()}' WHERE item = '{str(itembarcode.text())}'")
+		except:
+			pass
+
+	def save(self):
+		for i in self.editeditems:
+			self.cr.execut(i)
+		self.cr.commit()
 
 
 

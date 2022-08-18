@@ -29,7 +29,6 @@ class database():
 
 	def execut(self, sql):
 		cr.execute(sql)
-		db.commit()
 
 	def getallitemsname(self):
 		cr.execute("SELECT item FROM goods")

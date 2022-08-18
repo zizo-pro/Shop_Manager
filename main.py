@@ -5,6 +5,8 @@ from sys import argv
 from datamanager import database
 from cashier import cashierapp
 from adminwin import adminwin
+from checkitem import checkitem
+from storage import storagewin
 FORM_CLASS,_=loadUiType(path.join(path.dirname(__file__),"GUI/login.ui"))
 
 class mainapp(QMainWindow,FORM_CLASS):
@@ -15,7 +17,9 @@ class mainapp(QMainWindow,FORM_CLASS):
 		self.login_bt.clicked.connect(self.login)
 		self.users = {
 			"1111" : adminwin(),
-			"1112" : cashierapp()
+			"1112" : cashierapp(),
+			"1113" : checkitem(),
+			"1114" : storagewin(),
 		}
 
 	def login(self):
