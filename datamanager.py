@@ -3,8 +3,8 @@ from sqlite3 import connect
 
 class database():
 	def __init__(self, parent=None):
-		super(database, self).__init__(parent)
-		self.databaseconnect("DB/database.db")
+		super(database, self)
+		self.cr = self.databaseconnect("DB/database.db")
 
 	def databaseconnect(self, dbpath):
 		global cr, db
@@ -40,3 +40,5 @@ class database():
 		cr.execute(f"SELECT * FROM goods WHERE item = '{name}'")
 		dataitem = cr.fetchone()
 		return dataitem
+	def commit(self):
+		db.commit()

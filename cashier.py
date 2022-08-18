@@ -7,6 +7,7 @@ from datamanager import database
 from serchable_combobox import ExtendedComboBox
 from datetime import datetime
 from msgboxes import msgbox
+from get_item_data import getitemdata
 
 FORM_CLASS,_=loadUiType(path.join(path.dirname(__file__),"GUI/cashier.ui"))
 
@@ -15,7 +16,8 @@ class cashierapp(QMainWindow,FORM_CLASS):
 		super(cashierapp,self).__init__(parent)
 		self.setupUi(self)
 		self.curr_purchase = []
-		self.cr = database()
+		self.cr = database
+		self.dataitem = getitemdata()
 		self.msgbox = msgbox()
 		self.combobox = ExtendedComboBox(self)
 		self.buttonman()
@@ -147,8 +149,6 @@ class cashierapp(QMainWindow,FORM_CLASS):
 				self.cashier_table.setRowCount(0)
 			elif items == [] and self.cashier_table.rowCount() == 0:
 				self.msgbox.criticalmessagebox(f"YOU CAN'T MAKE AN EMPTY FATORA").exec_()
-
-
 
 
 if __name__ == "__main__":

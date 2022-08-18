@@ -9,9 +9,9 @@ from msgboxes import msgbox
 FORM_CLASS, _ = loadUiType(path.join(path.dirname(__file__), "GUI/check.ui"))
 
 
-class cashierapp(QMainWindow, FORM_CLASS):
+class checkitem(QMainWindow, FORM_CLASS):
 	def __init__(self, parent=None):
-		super(cashierapp, self).__init__(parent)
+		super(checkitem, self).__init__(parent)
 		self.setupUi(self)
 		self.dataitem = getitemdata()
 		self.msgbox = msgbox()
@@ -27,6 +27,6 @@ class cashierapp(QMainWindow, FORM_CLASS):
 if __name__ == "__main__":
 	app = QApplication(argv)
 	MainWindow = QMainWindow()
-	window = cashierapp()
+	window = checkitem()
 	window.show()
 	exit(app.exec_())

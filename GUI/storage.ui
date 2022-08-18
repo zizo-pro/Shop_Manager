@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Storage</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="storage_table">
+    <property name="geometry">
+     <rect>
+      <x>375</x>
+      <y>0</y>
+      <width>421</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>item</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>price</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>amount</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>barcode</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>discount_percent</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QLineEdit" name="barcode_search">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>40</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Barcode search</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="search_bt">
+    <property name="geometry">
+     <rect>
+      <x>216</x>
+      <y>39</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="additem_bt">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>530</y>
+      <width>81</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add New Item</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="save_bt">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>550</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>save</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reset_table_bt">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>120</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

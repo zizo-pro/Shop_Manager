@@ -6,54 +6,45 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>910</width>
-    <height>610</height>
+    <width>290</width>
+    <height>174</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QFrame" name="frame">
+   <widget class="QPushButton" name="cashier_bt">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>151</width>
-      <height>590</height>
+      <x>10</x>
+      <y>10</y>
+      <width>121</width>
+      <height>121</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <property name="text">
+     <string>cashier</string>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+    <property name="flat">
+     <bool>true</bool>
     </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+   </widget>
+   <widget class="QPushButton" name="check_bt">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>10</y>
+      <width>121</width>
+      <height>121</height>
+     </rect>
     </property>
-    <widget class="QPushButton" name="admin_bt">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>151</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-     <property name="autoDefault">
-      <bool>false</bool>
-     </property>
-     <property name="default">
-      <bool>false</bool>
-     </property>
-     <property name="flat">
-      <bool>true</bool>
-     </property>
-    </widget>
+    <property name="text">
+     <string>check</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -61,7 +52,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>910</width>
+     <width>290</width>
      <height>21</height>
     </rect>
    </property>
