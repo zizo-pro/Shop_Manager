@@ -4,7 +4,7 @@ from os import path
 from sys import argv
 from datamanager import database
 from additem import additem
-
+from msgboxes import msgbox
 
 FORM_CLASS,_=loadUiType(path.join(path.dirname(__file__),"GUI/storage.ui"))
 
@@ -17,6 +17,7 @@ class storagewin(QMainWindow, FORM_CLASS):
 		self.buttonman()
 		self.filltable()
 		self.addwin = additem()
+		self.msbox = msgbox()
 		self.editeditems = []
 
 	def buttonman(self):
@@ -66,9 +67,15 @@ class storagewin(QMainWindow, FORM_CLASS):
 			pass
 
 	def save(self):
-		for i in self.editeditems:
-			self.cr.execut(i)
-		self.cr.commit()
+		def yup():
+			for i in self.editeditems:
+				self.cr.execut(i)
+			self.cr.commit()
+		msg = self.msbox.infomessagebox("Are You Sure That You Want To Update The Database")
+		yesbtn = msg.addButton("Yes",QMessageBox.YesRole)
+		nobtn = msg.addButton("No",QMessageBox.NoRole)
+		yesbtn.clicked.connect(yup)
+		retval = msg.exec_()
 
 
 

@@ -143,7 +143,12 @@ class cashierapp(QMainWindow,FORM_CLASS):
 				curr_totalpric = self.totalprice_lb.text()
 				ss = curr_totalpric.find("$")
 				lol = str(' '.join(items))
-				self.cr.execut(self,f"INSERT INTO fatora (items,total,time,cashier) VALUES ('{lol}','{curr_totalpric[:ss]}','{datetime.now()}','{self.staffcombo.currentText()}')")
+				e = datetime.now()
+				date = f"{e.year}-{e.month}-{e.day}"
+				time = f"{e.hour}:{e.minute}:{e.second}"
+				cashid = self.cr.executeone(self,f"SELECT id FROM staff WHERE name = '{self.staffcombo.currentText()}'")
+				self.cr.execut(self,f"INSERT INTO fatora (items,total,date,time,cashier) VALUES ('{lol}','{curr_totalpric[:ss]}','{date}','{time}','{cashid[0]}')")
+				self.cr.commit(self)
 				self.curr_purchase = []
 				self.totalprice_lb.setText("0$")
 				self.cashier_table.setRowCount(0)

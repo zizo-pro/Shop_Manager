@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="save_bt">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>540</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>save</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="staff_table">
+   <property name="geometry">
+    <rect>
+     <x>254</x>
+     <y>10</y>
+     <width>541</width>
+     <height>571</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>phone</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>address</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>job</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>salary</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>birth Day</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="addworker_bt">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>540</y>
+     <width>81</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add New Item</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="search_bt">
+   <property name="geometry">
+    <rect>
+     <x>146</x>
+     <y>49</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="reset_table_bt">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>130</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="worker_search">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>50</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>worker search</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
